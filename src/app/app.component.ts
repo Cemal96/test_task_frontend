@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+import { CategorySelectComponent } from './category/category-select.component'
 
 @Component({
   selector: 'app',

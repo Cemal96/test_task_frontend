@@ -2,12 +2,14 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { App } from './app.component';
+import { CategorySelectComponent } from './category/category-select.component';
 
 
 @NgModule({
   bootstrap: [ App ],
   declarations: [
-    App
+    App,
+    CategorySelectComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule
