@@ -18,7 +18,8 @@ import { CategoryService } from './category/category.service'
     BrowserModule
   ],
   providers: [
-    CategoryService
+    CategoryService,
+    HttpModule
   ]
 })
 export class AppModule {}
