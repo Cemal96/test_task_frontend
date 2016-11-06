@@ -8,13 +8,14 @@ import { CategoryService } from './category.service';
   selector: 'category-select',
   templateUrl: './category-select.component.html',
   styleUrls: [
-    '../app.style.scss'
+    '../app.style.scss', './category.scss'
   ]
 })
 
 export class CategorySelectComponent implements OnInit {
   errorMessage: string;
   categories: Promise<Category[]>;
+  selectedCategory: Category;
 
   constructor(private _categoryService: CategoryService ) {}
 
@@ -24,5 +25,9 @@ export class CategorySelectComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCategories();
+  }
+
+  select(category: Category) {
+    this.selectedCategory = category;
   }
 }
