@@ -22,7 +22,9 @@ export class ProductService {
   }
 
   getProduct(id: number) {
-    return this._http.get(this.apiUrl + 'products/' + id + '.json').toPromise();
+    return this._http.get(this.apiUrl + 'products/' + id + '.json')
+               .toPromise()
+               .then(response => response.json() as Product);
   }
 
   private handleError(error: Response) {

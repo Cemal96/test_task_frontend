@@ -6,6 +6,11 @@ import { ProductDetailsComponent } from './product/product-details.component';
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: '/1',
+    pathMatch: 'full'
+  },
+  {
     path: ':id',
     component: CategorySelectComponent
   },

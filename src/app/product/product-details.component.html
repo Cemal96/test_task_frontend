@@ -1,15 +1,15 @@
 <h1>Product</h1>
 <ul class="products">
-  <li>
-     <h2>{{product.name}}</h2>
-    <!-- <h2>{{product.description}}</h2>  -->
-    <!-- <div class="row">
-      <div class="col-md-6">
-        <offer [offers]="product.offers"></offer>
-      </div>
+  <li *ngIf="product">
+    <h2>{{product.name}}</h2>
+    <h2>{{product.description}}</h2>
+     <div class="row">
       <div class="col-md-6">
         <store [stores]="product.stores"></store>
       </div>
-    </div> -->
+      <div class="col-md-6">
+        <offer [offers]="product.offers"></offer>
+      </div>
+    </div>
   </li>
 </ul>

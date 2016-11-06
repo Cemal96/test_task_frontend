@@ -14,8 +14,15 @@ import { ProductService } from './product.service';
 })
 export class ProductDetailsComponent implements OnInit {
   product: Product;
+
   constructor(private _activatedRoute: ActivatedRoute,
     private _productService: ProductService) { }
 
-  ngOnInit() {  }
+  ngOnInit() {
+    this._activatedRoute.params.subscribe(params => {
+      let id = params['id'];
+      this._productService.getProduct(id)
+      .then(data => {this.product = data});
+    });
+   }
 }
