@@ -6,7 +6,10 @@ import { CategoryService } from './category.service';
 @Component({
   moduleId: module.id,
   selector: 'category-select',
-  templateUrl: './category-select.component.html'
+  templateUrl: './category-select.component.html',
+  styleUrls: [
+    '../app.style.scss'
+  ]
 })
 
 export class CategorySelectComponent implements OnInit {
