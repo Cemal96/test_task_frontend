@@ -6,7 +6,7 @@ import { ProductService } from './product.service';
 @Component({
   moduleId: module.id,
   selector: 'product-list',
-  templateUrl: './list.component.html'
+  templateUrl: './product-list.component.html'
 })
 
 export class ProductListComponent implements OnInit {
