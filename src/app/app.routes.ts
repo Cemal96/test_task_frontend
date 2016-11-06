@@ -5,9 +5,8 @@ import { CategorySelectComponent } from './category/category-select.component';
 import { ProductDetailsComponent } from './product/product-details.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/1', pathMatch: 'full' },
   {
-    path: ':category_id',
+    path: ':id',
     component: CategorySelectComponent
   },
   {

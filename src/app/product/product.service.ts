@@ -14,11 +14,15 @@ export class ProductService {
 
   private apiUrl = 'http://localhost:3001/';
 
-  getProducts() {
-    return this._http.get(this.apiUrl + 'categories/3/' + 'products')
+  getProducts(id: number) {
+    return this._http.get(this.apiUrl + 'categories/'+ id + '/products.json')
       .map((response: Response) => <Product[]>response.json().products)
       .toPromise()
       .catch(this.handleError);
+  }
+
+  getProduct(id: number) {
+    return this._http.get(this.apiUrl + 'products/' + id + '.json').toPromise();
   }
 
   private handleError(error: Response) {

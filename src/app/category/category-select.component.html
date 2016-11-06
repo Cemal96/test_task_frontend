@@ -2,16 +2,18 @@
   <div class="row">
     <div class="col-md-2">
       <h1>Categories</h1>
+      {{selectedCategory}}
       <ul class="categories">
         <li *ngFor="let category of categories | async"
-            [class.selected]="category === selectedCategory"
-            (click)="select(category)">
-          {{category.name}}
+            [class.selected]="category.id === selectedCategory"
+            (click)="select(category.id)"
+            [routerLink]="['/', category.id]">
+          <a href="#">{{category.name}}</a>
         </li>
       </ul>
     </div>
     <div class="col-md-10">
-      <product-list></product-list>
+      <product-list [category_id]='selectedCategory'></product-list>
     </div>
   </div>
 </div>
