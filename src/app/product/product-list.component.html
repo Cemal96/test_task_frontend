@@ -2,7 +2,6 @@
 <ul class="products">
   <li *ngFor="let product of products | async">
     {{product.name}}
-    <!-- {{product.prices[0].price}} -->
     <offer [offers]="product.offers"></offer>
   </li>
 </ul>
