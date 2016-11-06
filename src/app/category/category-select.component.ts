@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
+import { Category } from './category';
+import { CategoryService } from './category.service';
 
 @Component({
   moduleId: module.id,
@@ -7,6 +9,16 @@ import { Component } from '@angular/core';
   templateUrl: './category-select.component.html'
 })
 
-export class CategorySelectComponent {
-  title = "Hello";
+export class CategoryComponent implements OnInit {
+  categories: Category[];
+
+  constructor(private _categoryService: CategoryService ) {}
+
+  getCategories(): void {
+    this.categories = this._categoryService.getCategories();
+  }
+
+  ngOnInit(): void {
+    this.getCategories();
+  }
 }
