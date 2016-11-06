@@ -3,8 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule }    from '@angular/http';
 
 import { App } from './app.component';
-import { CategoryComponent } from './category/category-select.component';
+import { CategorySelectComponent } from './category/category-select.component';
 import { CategoryService } from './category/category.service'
+import { ProductService } from './product/product.service'
 
 
 
@@ -12,14 +13,15 @@ import { CategoryService } from './category/category.service'
   bootstrap: [ App ],
   declarations: [
     App,
-    CategoryComponent
+    CategorySelectComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,
     HttpModule
   ],
   providers: [
-    CategoryService
+    CategoryService,
+    ProductService
   ]
 })
 export class AppModule {}

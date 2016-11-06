@@ -9,7 +9,7 @@ import { CategoryService } from './category.service';
   templateUrl: './category-select.component.html'
 })
 
-export class CategoryComponent implements OnInit {
+export class CategorySelectComponent implements OnInit {
   errorMessage: string;
   categories: Promise<Category[]>;
 
