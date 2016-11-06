@@ -1,9 +1,47 @@
 <h1>Products</h1>
-<ul class="products">
-  <li *ngFor="let product of products | async">
-    {{product.name}}
-    {{product.offers | range: 0}} to {{product.offers | range: 1}}
-    <!-- <offer [offers]="product.offers"></offer>
-    <store [stores]="product.stores"></store> -->
-  </li>
-</ul>
+
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th class="col-xs-3">Image</th>
+        <th class="col-xs-2">Name</th>
+        <th class="col-xs-4">Description</th>
+        <th class="col-xs-3">Prices</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products | async">
+        <td><img src="https://dummyimage.com/200.png/09f/fff"></td>
+        <td><a href="#">{{product.name}}</a></td>
+        <td>{{product.description}}</td>
+        <td>from {{product.offers | range: 0}} to {{product.offers | range: 1}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- <ul class="products">
+  <div class="container">
+    <li *ngFor="let product of products | async">
+      <div class="row">
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-3">
+          {{product.name}}
+        </div>
+        <div class="col-md-3">
+          {{product.description}}
+        </div>
+        <div class="col-md-3">
+          from {{product.offers | range: 0}} to {{product.offers | range: 1}}
+        </div>
+      </div>
+
+    </li>
+  </div>
+
+</ul> -->
+<!-- <offer [offers]="product.offers"></offer>
+<store [stores]="product.stores"></store> -->
