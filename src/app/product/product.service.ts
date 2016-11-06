@@ -14,7 +14,7 @@ export class ProductService {
 
   private apiUrl = 'http://localhost:3001/';
 
-  getCategories() {
+  getProducts() {
     return this._http.get(this.apiUrl + 'categories/2' + 'products')
       .map((response: Response) => <Product[]>response.json())
       .toPromise()
