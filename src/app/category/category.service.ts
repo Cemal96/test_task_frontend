@@ -18,7 +18,7 @@ export class CategoryService {
 
   private apiUrl = 'http://localhost:3001/';
 
-  getVehicles() {
+  getCategories() {
     return this._http.get(this.apiUrl + 'categories.json')
       .map((response: Response) => <Category[]>response.json())
       .toPromise()

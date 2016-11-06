@@ -10,7 +10,8 @@ import { CategoryService } from './category.service';
 })
 
 export class CategoryComponent implements OnInit {
-  categories: Category[];
+  errorMessage: string;
+  categories: Promise<Category[]>;
 
   constructor(private _categoryService: CategoryService ) {}
 
