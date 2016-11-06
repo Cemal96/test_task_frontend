@@ -4,10 +4,10 @@ html, body{
   font-family: Arial, Helvetica, sans-serif
 }
 
-span.active {
-  background-color: gray;
+li {
+  list-style-type: none;
 }
 
-li {
-  list-style-type: none; 
+.sidebar {
+  background-color: #d3d8d2;
 }

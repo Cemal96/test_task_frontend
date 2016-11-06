@@ -6,9 +6,12 @@ import { Offer } from './offer';
   selector: 'offer',
   template: `
     <li *ngFor="let offer of offers">
-      {{offer.price}}
+      {{offer.price | currency}}
     </li>
-  `
+  `,
+  styleUrls: [
+    '../../app.style.scss'
+  ]
 })
 export class OfferComponent {
   @Input()

@@ -1,15 +1,24 @@
 <h1>Product</h1>
-<ul class="products">
-  <li *ngIf="product">
-    <h2>{{product.name}}</h2>
-    <h2>{{product.description}}</h2>
-     <div class="row">
-      <div class="col-md-6">
-        <store [stores]="product.stores"></store>
-      </div>
-      <div class="col-md-6">
-        <offer [offers]="product.offers"></offer>
-      </div>
+<div *ngIf="product" class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <img src="https://dummyimage.com/200.png/09f/fff">
     </div>
-  </li>
-</ul>
+    <div class="col-md-8">
+      <h2>{{product.name}}</h2>
+      <h3>{{product.description}}</h3>
+    </div>
+  </div>
+  <div class="row">
+    <h2>Offers</h2>
+  </div>
+  <div class="row">
+     <div class="col-md-3">
+       <store [stores]="product.stores"></store>
+     </div>
+     <div class="col-md-1">
+       <offer [offers]="product.offers"></offer>
+     </div>
+   </div>
+   <button class="btn-default" (click)="goBack()">Back</button>
+</div>

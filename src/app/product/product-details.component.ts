@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router, Params } from "@angular/router";
+import { Location }               from '@angular/common';
 
 import { Product } from './product';
 import { ProductService } from './product.service';
@@ -16,7 +17,8 @@ export class ProductDetailsComponent implements OnInit {
   product: Product;
 
   constructor(private _activatedRoute: ActivatedRoute,
-    private _productService: ProductService) { }
+    private _productService: ProductService,
+    private _location: Location ) { }
 
   ngOnInit() {
     this._activatedRoute.params.subscribe(params => {
@@ -24,5 +26,9 @@ export class ProductDetailsComponent implements OnInit {
       this._productService.getProduct(id)
       .then(data => {this.product = data});
     });
+   }
+
+   goBack(): void {
+     this._location.back();
    }
 }
