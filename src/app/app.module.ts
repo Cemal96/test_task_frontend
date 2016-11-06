@@ -15,11 +15,11 @@ import { CategoryService } from './category/category.service'
     CategoryComponent
   ],
   imports: [ // import Angular's modules
-    BrowserModule
+    BrowserModule,
+    HttpModule
   ],
   providers: [
-    CategoryService,
-    HttpModule
+    CategoryService
   ]
 })
 export class AppModule {}
