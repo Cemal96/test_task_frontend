@@ -1,17 +1,23 @@
-import { Routes, RouterModule } from '@angular/router';
-import { Home } from './home';
-import { About } from './about';
-import { NoContent } from './no-content';
+import { NgModule }             from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-import { DataResolver } from './app.resolver';
+import { CategorySelectComponent } from './category/category-select.component';
+import { ProductDetailsComponent } from './product/product-details.component';
 
-
-export const ROUTES: Routes = [
-  { path: '',      component: Home },
-  { path: 'home',  component: Home },
-  { path: 'about', component: About },
+const routes: Routes = [
+  { path: '', redirectTo: '/1', pathMatch: 'full' },
   {
-    path: 'detail', loadChildren: () => System.import('./+detail')
+    path: ':category_id',
+    component: CategorySelectComponent
   },
-  { path: '**',    component: NoContent },
+  {
+    path: 'products/:id',
+    component: ProductDetailsComponent
+  }
 ];
+
+@NgModule({
+  imports: [ RouterModule.forRoot(routes) ],
+  exports: [ RouterModule ]
+})
+export class AppRoutingModule {}
