@@ -5,8 +5,11 @@ import { HttpModule }    from '@angular/http';
 import { App } from './app.component';
 import { CategorySelectComponent } from './category/category-select.component';
 import { ProductListComponent } from './product/product-list.component';
-import { CategoryService } from './category/category.service'
-import { ProductService } from './product/product.service'
+import { OfferComponent } from './product/offer/offer.component';
+
+import { CategoryService } from './category/category.service';
+import { ProductService } from './product/product.service';
+
 
 
 
@@ -15,7 +18,8 @@ import { ProductService } from './product/product.service'
   declarations: [
     App,
     CategorySelectComponent,
-    ProductListComponent
+    ProductListComponent,
+    OfferComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,
