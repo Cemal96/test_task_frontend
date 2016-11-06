@@ -16,7 +16,7 @@ export class ProductService {
 
   getProducts() {
     return this._http.get(this.apiUrl + 'categories/3/' + 'products')
-      .map((response: Response) => <Product[]>response.json())
+      .map((response: Response) => <Product[]>response.json().products)
       .toPromise()
       .catch(this.handleError);
   }

@@ -1,7 +1,9 @@
-<h1>products</h1>
+<h1>Products</h1>
 <ul class="products">
   <li *ngFor="let product of products | async">
     {{product.name}}
-    <offer [offers]="product.offers"></offer>
+    {{product.offers | range: 0}} to {{product.offers | range: 1}}
+    <!-- <offer [offers]="product.offers"></offer>
+    <store [stores]="product.stores"></store> -->
   </li>
 </ul>
