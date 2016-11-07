@@ -15,6 +15,5 @@ export class ProductListComponent {
   errorMessage: string;
   @Input() products: Product[];
 
-  constructor(private _productService: ProductService,
-  private _router: Router ) {}
+  constructor(private _router: Router ) {}
 }
