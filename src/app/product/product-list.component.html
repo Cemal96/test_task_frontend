@@ -1,7 +1,10 @@
 <h1>Products</h1>
-<input id="slider1" type="range" min="1" max="100" step="10" (onchange)="changePriceRange($event.target.value)"/>
-from <input value={{min_price}} (keyup.enter) = "changePriceRangeMin($event.target.value)" />
-to <input value={{max_price}} (keyup.enter) = "changePriceRangeMax($event.target.value)" />
+from
+<input id="slider1" type="range" min="1" max="100" value={{min_price}} (change)="changePriceRangeMin($event.target.value)"/>
+to
+<input id="slider1" type="range" min="1" max="100" value={{max_price}} (change)="changePriceRangeMax($event.target.value)"/>
+from {{min_price | currency}}
+to {{max_price | currency}}
 <div class="table-responsive">
   <table class="table table-hover">
     <thead>
@@ -17,7 +20,7 @@ to <input value={{max_price}} (keyup.enter) = "changePriceRangeMax($event.target
         <td><img src="https://dummyimage.com/200.png/09f/fff"></td>
         <a [routerLink]="['/products', product.id]">{{product.name}}</a>
         <td>{{product.description}}</td>
-        <td>from {{product.offers | range: 0}} to {{product.offers | range: 1}}</td>
+        <td>from {{product.offers | range: 0 | currency}} to {{product.offers | range: 1 | currency}}</td>
       </tr>
     </tbody>
   </table>

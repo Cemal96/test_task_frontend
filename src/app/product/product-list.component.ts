@@ -26,12 +26,10 @@ export class ProductListComponent implements OnInit, OnChanges {
   }
 
   changePriceRangeMin(price:any): void {
-    console.log(price);
     this.min_price = price;
     this.products = this._productService.getProducts(this.category_id, this.min_price, this.max_price)
   }
   changePriceRangeMax(price:any): void {
-    console.log(price);
     this.max_price = price;
     this.products = this._productService.getProducts(this.category_id, this.min_price, this.max_price)
   }
@@ -42,8 +40,5 @@ export class ProductListComponent implements OnInit, OnChanges {
       this.category_id = chng.currentValue;
       this.products = this._productService.getProducts(chng.currentValue)
     }
-  }
-  onClickMe() {
-    console.log(1);
   }
 }
