@@ -3,6 +3,7 @@ import { Http, Response} from '@angular/http';
 import { URLSearchParams } from '@angular/http';
 import { Observable } from "rxjs/Rx";
 
+import { Product } from './product';
 import { Products } from './products';
 
 
