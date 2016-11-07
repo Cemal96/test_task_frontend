@@ -1,5 +1,7 @@
 <h1>Products</h1>
-
+<input id="slider1" type="range" min="1" max="100" step="10" (onchange)="changePriceRange($event.target.value)"/>
+from <input value={{min_price}} (keyup.enter) = "changePriceRangeMin($event.target.value)" />
+to <input value={{max_price}} (keyup.enter) = "changePriceRangeMax($event.target.value)" />
 <div class="table-responsive">
   <table class="table table-hover">
     <thead>

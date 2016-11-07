@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule }    from '@angular/http';
+import { FormsModule }   from '@angular/forms';
 
 import { App } from './app.component';
 import { CategorySelectComponent } from './category/category-select.component';
@@ -31,7 +32,8 @@ import { AppRoutingModule } from './app.routes';
   imports: [ // import Angular's modules
     BrowserModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     CategoryService,
