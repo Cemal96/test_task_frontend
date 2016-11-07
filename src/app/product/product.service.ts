@@ -14,8 +14,13 @@ export class ProductService {
 
   private apiUrl = 'http://localhost:3001/';
 
-  getProducts(id: number) {
-    return this._http.get(this.apiUrl + 'categories/'+ id + '/products.json')
+  getProducts(id: number, min_price?: number, max_price?: number) {
+    let params = new URLSearchParams();
+    if (max_price) {
+      params.set('min_price', String(min_price));
+      params.set('max_price', String(max_price));
+    }
+    return this._http.get(this.apiUrl + 'categories/'+ id + '/products.json', {search: params})
       .map((response: Response) => <Product[]>response.json().products)
       .toPromise()
       .catch(this.handleError);
