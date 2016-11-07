@@ -22,9 +22,8 @@ export class ProductService {
       params.set('max_price', String(max_price));
     }
     return this._http.get(this.apiUrl + 'categories/'+ id + '/products.json', {search: params})
-      .map((response: Response) => <Products>response.json())
-      .toPromise()
-      .catch(this.handleError);
+                      .toPromise()
+                      .then(response => response.json() as Products);
   }
 
   getProduct(id: number) {

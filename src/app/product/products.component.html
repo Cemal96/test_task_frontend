@@ -1,11 +1,10 @@
 <h1>Products</h1>
-  from
-  <input id="slider1" type="range" min="1" max="100" value={{min_price}} (change)="changePriceRangeMin($event.target.value)"/>
-  to
-  <input id="slider1" type="range" min="1" max="100" value={{max_price}} (change)="changePriceRangeMax($event.target.value)"/>
-  from {{min_price | currency}}
-  to {{max_price | currency}}
+
   <div *ngIf=products>
-    {{products.max_price | currency}}
-      <product-list [products]='productList'></product-list>
+    from {{products.min_price}}
+    <input type="range" min={{products.min_price}} max="100" value={{min_price}} (change)="changePriceRangeMin($event.target.value)"/>
+    to {{products.max_price}}
+    <input type="range" min="1" max={{products.max_price}} value={{max_price}} (change)="changePriceRangeMax($event.target.value)"/>
+    You select from {{min_price | currency}} to {{max_price | currency}}
+      <product-list [products]='products.products'></product-list>
   </div>
