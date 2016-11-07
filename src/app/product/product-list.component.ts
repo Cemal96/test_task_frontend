@@ -12,11 +12,8 @@ import { ProductService } from './product.service';
 })
 
 export class ProductListComponent {
-  @Input() category_id: number;
   errorMessage: string;
   @Input() products: Product[];
-  min_price = 0;
-  max_price = 100;
 
   constructor(private _productService: ProductService,
   private _router: Router ) {}

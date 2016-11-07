@@ -11,10 +11,10 @@ import { ProductService } from './product.service';
   templateUrl: './products.component.html'
 })
 
-export class ProductListComponent implements OnInit, OnChanges {
+export class ProductsComponent implements OnInit, OnChanges {
   @Input() category_id: number;
   errorMessage: string;
-  products: Promise<Products[]>;
+  products: Promise<Products>;
   min_price:number;
   max_price:number;
 
@@ -23,6 +23,8 @@ export class ProductListComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.products = this._productService.getProducts(this.category_id);
+    this.products.then(data => this.min_price = data.min_price);
+    this.products.then(data => this.max_price = data.max_price);
   }
 
   changePriceRangeMin(price:any): void {

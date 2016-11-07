@@ -5,6 +5,7 @@ import { FormsModule }   from '@angular/forms';
 
 import { App } from './app.component';
 import { CategorySelectComponent } from './category/category-select.component';
+import { ProductsComponent } from './product/products.component';
 import { ProductListComponent } from './product/product-list.component';
 import { ProductDetailsComponent } from './product/product-details.component';
 import { OfferComponent } from './product/offer/offer.component';
@@ -23,6 +24,7 @@ import { AppRoutingModule } from './app.routes';
   declarations: [
     App,
     CategorySelectComponent,
+    ProductsComponent,
     ProductListComponent,
     OfferComponent,
     StoreComponent,
