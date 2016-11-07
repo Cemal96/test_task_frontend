@@ -3,7 +3,7 @@ import { Http, Response} from '@angular/http';
 import { URLSearchParams } from '@angular/http';
 import { Observable } from "rxjs/Rx";
 
-import { Product } from './product';
+import { Products } from './products';
 
 
 
@@ -21,7 +21,7 @@ export class ProductService {
       params.set('max_price', String(max_price));
     }
     return this._http.get(this.apiUrl + 'categories/'+ id + '/products.json', {search: params})
-      .map((response: Response) => {<Product[]>response.json().products})
+      .map((response: Response) => <Products[]>response.json())
       .toPromise()
       .catch(this.handleError);
   }
