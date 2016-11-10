@@ -2,13 +2,13 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router, Params } from "@angular/router";
 import { Location }               from '@angular/common';
 
-import { Product } from './product';
-import { ProductService } from './product.service';
+import { Product } from '../../models/product';
+import { ProductService } from '../../services/product.service';
 
 
 @Component({
   selector: 'product-details',
-  templateUrl: './product-details.component.html'
+  templateUrl: '../../templates/product-details.component.html'
 })
 export class ProductDetailsComponent implements OnInit {
   product: Product;

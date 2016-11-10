@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
 
-import { Offer } from './offer';
+import { Offer } from '../../../models/offer';
 
 @Component({
   selector: 'offer',
-  templateUrl: './offer.component.html'
+  templateUrl: '../../../templates/offer.component.html'
 })
 export class OfferComponent {
   @Input()

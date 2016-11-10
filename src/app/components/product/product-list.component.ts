@@ -1,11 +1,11 @@
 import { Component, OnInit, Input, OnChanges, SimpleChange } from '@angular/core';
 import { Router }            from '@angular/router';
-import { Product } from './product';
-import { ProductService } from './product.service';
+import { Product } from '../../models/product';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'product-list',
-  templateUrl: './product-list.component.html'
+  templateUrl: '../../templates/product-list.component.html'
 })
 
 export class ProductListComponent {
