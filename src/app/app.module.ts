@@ -32,7 +32,7 @@ import { AppRoutingModule } from './app.routes';
     ProductDetailsComponent,
     RangePipe
   ],
-  imports: [ // import Angular's modules
+  imports: [
     BrowserModule,
     HttpModule,
     AppRoutingModule,
