@@ -3,9 +3,9 @@ import { Http, Response} from '@angular/http';
 import { URLSearchParams } from '@angular/http';
 import { Observable } from "rxjs/Rx";
 
-import { Product } from '../models/product';
-import { Products } from '../models/products';
-import { ErrorService } from './error.service'
+import { Product } from 'models/product';
+import { Products } from 'models/products';
+import { ErrorService } from 'services/error.service'
 
 
 

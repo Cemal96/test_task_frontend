@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { Store } from '../models/store';
+import { Store } from 'models/store';
 
 @Component({
   selector: 'store',

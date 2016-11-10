@@ -2,8 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router, Params } from "@angular/router";
 import { Location }               from '@angular/common';
 
-import { Product } from '../models/product';
-import { ProductService } from '../services/product.service';
+import { Product } from 'models/product';
+import { ProductService } from 'services/product.service';
 
 
 @Component({

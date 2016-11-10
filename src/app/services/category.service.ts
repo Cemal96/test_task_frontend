@@ -3,8 +3,8 @@ import { Http, Response} from '@angular/http';
 import { URLSearchParams } from '@angular/http';
 import { Observable } from "rxjs/Rx";
 
-import { Category } from '../models/category';
-import { ErrorService } from './error.service'
+import { Category } from 'models/category';
+import { ErrorService } from 'services/error.service'
 
 
 @Injectable()

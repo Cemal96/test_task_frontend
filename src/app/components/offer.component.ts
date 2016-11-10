@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { Offer } from '../models/offer';
+import { Offer } from 'models/offer';
 
 @Component({
   selector: 'offer',

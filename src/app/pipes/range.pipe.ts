@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-import { Offer } from '../models/offer'
+import { Offer } from 'models/offer'
 /*
  * Raise the value exponentially
  * Takes an exponent argument that defaults to 1.
