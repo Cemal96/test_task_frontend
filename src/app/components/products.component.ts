@@ -38,7 +38,7 @@ export class ProductsComponent implements OnInit, OnChanges {
     for (let propName in changes) {
       let chng = changes[propName];
       this.category_id = chng.currentValue;
-      this._productService.getProducts(chng.currentValue)
+      this._productService.getProducts(chng.currentValue, this.min_price, this.max_price)
                           .then(data => {this.products = data});
     }
   }
