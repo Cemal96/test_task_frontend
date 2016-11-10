@@ -23,14 +23,14 @@ export class ProductService {
     }
     return this._http.get(API_URL + 'categories/'+ id + '/products.json', {search: params})
                       .toPromise()
-                      .then(response => response.json() as Products)
+                      .then(response => response.json())
                       .catch(this._errorService.handleError);
   }
 
   getProduct(id: number) {
     return this._http.get(API_URL + 'products/' + id + '.json')
                .toPromise()
-               .then(response => response.json() as Product)
+               .then(response => response.json())
                .catch(this._errorService.handleError);
   }
 }
