@@ -8,5 +8,5 @@ import { Offer } from './offer';
 })
 export class OfferComponent {
   @Input()
-  offers: Offer[];
+  offer: Offer;
 }

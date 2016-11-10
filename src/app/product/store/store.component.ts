@@ -8,5 +8,5 @@ import { Store } from './store';
 })
 export class StoreComponent {
   @Input()
-  stores: Store[];
+  store: Store;
 }

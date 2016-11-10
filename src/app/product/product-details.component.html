@@ -14,10 +14,14 @@
   </div>
   <div class="row">
      <div class="col-md-3">
-       <store [stores]="product.stores"></store>
+       <ul *ngFor="let store of product.stores">
+         <store [store]="store"></store>
+       </ul>
      </div>
      <div class="col-md-1">
-       <offer [offers]="product.offers"></offer>
+       <ul *ngFor="let offer of product.offers">
+         <offer [offer]="offer"></offer>
+       </ul>
      </div>
    </div>
    <button class="btn btn-default" (click)="goBack()">Back</button>
