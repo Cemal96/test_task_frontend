@@ -4,10 +4,7 @@ import { Offer } from './offer';
 
 @Component({
   selector: 'offer',
-  templateUrl: './offer.component.html',
-  styleUrls: [
-    '../../app.style.scss'
-  ]
+  templateUrl: './offer.component.html'
 })
 export class OfferComponent {
   @Input()

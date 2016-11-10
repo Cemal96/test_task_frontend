@@ -7,10 +7,7 @@ import { CategoryService } from './category.service';
 
 @Component({
   selector: 'category-select',
-  templateUrl: './category-select.component.html',
-  styleUrls: [
-    '../app.style.scss'
-  ]
+  templateUrl: './category-select.component.html'
 })
 
 export class CategorySelectComponent implements OnInit, OnDestroy {

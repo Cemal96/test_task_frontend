@@ -8,11 +8,11 @@
   <title><%= webpackConfig.metadata.title %></title>
 
   <meta name="description" content="<%= webpackConfig.metadata.title %>">
-
   <% if (webpackConfig.htmlElements.headTags) { %>
   <!-- Configured Head Tags  -->
   <%= webpackConfig.htmlElements.headTags %>
   <% } %>
+  <link rel="stylesheet" type="text/css" href="./app.style.scss" media="screen" />
 
   <!-- base url -->
   <base href="/">

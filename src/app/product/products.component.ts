@@ -6,9 +6,6 @@ import { ProductService } from './product.service';
 
 @Component({
   selector: 'products',
-  styleUrls: [
-    '../app.style.scss'
-  ],
   templateUrl: './products.component.html'
 })
 
