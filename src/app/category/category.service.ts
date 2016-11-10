@@ -13,10 +13,8 @@ export class CategoryService {
   constructor(private _http: Http,
               private _errorService: ErrorService) { }
 
-  private apiUrl = 'http://localhost:3001/';
-
   getCategories() {
-    return this._http.get(this.apiUrl + 'categories.json')
+    return this._http.get(API_URL + 'categories.json')
       .map((response: Response) => <Category[]>response.json())
       .toPromise()
       .catch(this._errorService.handleError);
