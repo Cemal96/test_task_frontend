@@ -4,13 +4,14 @@ import { URLSearchParams } from '@angular/http';
 import { Observable } from "rxjs/Rx";
 
 import { Category } from './category';
-
+import { ErrorService } from '../services/error.service'
 
 
 @Injectable()
 export class CategoryService {
 
-  constructor(private _http: Http) { }
+  constructor(private _http: Http,
+              private _errorService: ErrorService) { }
 
   private apiUrl = 'http://localhost:3001/';
 
@@ -18,12 +19,6 @@ export class CategoryService {
     return this._http.get(this.apiUrl + 'categories.json')
       .map((response: Response) => <Category[]>response.json())
       .toPromise()
-      .catch(this.handleError);
+      .catch(this._errorService.handleError);
   }
-
-  private handleError(error: Response) {
-    console.error(error);
-    return Observable.throw(error.json().error || 'Server error');
-  }
-
 }

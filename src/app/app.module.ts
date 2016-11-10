@@ -13,6 +13,7 @@ import { StoreComponent } from './product/store/store.component';
 
 import { CategoryService } from './category/category.service';
 import { ProductService } from './product/product.service';
+import { ErrorService } from './services/error.service';
 
 import { RangePipe } from './range.pipe';
 
@@ -39,7 +40,8 @@ import { AppRoutingModule } from './app.routes';
   ],
   providers: [
     CategoryService,
-    ProductService
+    ProductService,
+    ErrorService
   ]
 })
 export class AppModule {}

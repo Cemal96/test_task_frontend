@@ -5,13 +5,15 @@ import { Observable } from "rxjs/Rx";
 
 import { Product } from './product';
 import { Products } from './products';
+import { ErrorService } from '../services/error.service'
 
 
 
 @Injectable()
 export class ProductService {
 
-  constructor(private _http: Http) { }
+  constructor(private _http: Http,
+              private _errorService: ErrorService) { }
 
   private apiUrl = 'http://localhost:3001/';
 
@@ -23,18 +25,14 @@ export class ProductService {
     }
     return this._http.get(this.apiUrl + 'categories/'+ id + '/products.json', {search: params})
                       .toPromise()
-                      .then(response => response.json() as Products);
+                      .then(response => response.json() as Products)
+                      .catch(this._errorService.handleError);
   }
 
   getProduct(id: number) {
     return this._http.get(this.apiUrl + 'products/' + id + '.json')
                .toPromise()
-               .then(response => response.json() as Product);
+               .then(response => response.json() as Product)
+               .catch(this._errorService.handleError);
   }
-
-  private handleError(error: Response) {
-    console.error(error);
-    return Observable.throw(error.json().error || 'Server error');
-  }
-
 }
