@@ -4,11 +4,7 @@ import { Store } from './store';
 
 @Component({
   selector: 'store',
-  template: `
-    <li *ngFor="let store of stores">
-      {{store.name}}
-    </li>
-  `
+  templateUrl: 'store.component.html'
 })
 export class StoreComponent {
   @Input()

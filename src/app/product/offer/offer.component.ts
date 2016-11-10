@@ -4,11 +4,7 @@ import { Offer } from './offer';
 
 @Component({
   selector: 'offer',
-  template: `
-    <li *ngFor="let offer of offers">
-      {{offer.price | currency}}
-    </li>
-  `,
+  templateUrl: './offer.component.html',
   styleUrls: [
     '../../app.style.scss'
   ]
