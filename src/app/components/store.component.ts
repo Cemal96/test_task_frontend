@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
 
-import { Store } from '../../../models/store';
+import { Store } from '../models/store';
 
 @Component({
   selector: 'store',
-  templateUrl: '../../../templates/store.component.html'
+  templateUrl: '../templates/store.component.html'
 })
 export class StoreComponent {
   @Input()

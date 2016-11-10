@@ -1,12 +1,12 @@
 import { Component, OnInit, Input, OnChanges, SimpleChange } from '@angular/core';
 import { Router }            from '@angular/router';
-import { Product } from '../../models/product';
-import { Products } from '../../models/products';
-import { ProductService } from '../../services/product.service';
+import { Product } from '../models/product';
+import { Products } from '../models/products';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'products',
-  templateUrl: '../../templates/products.component.html'
+  templateUrl: '../templates/products.component.html'
 })
 
 export class ProductsComponent implements OnInit, OnChanges {
