@@ -10,15 +10,15 @@ import { ProductService } from 'services/product.service';
   selector: 'product-details',
   templateUrl: '../templates/product-details.component.html'
 })
-export class ProductDetailsComponent implements OnInit {
+export class ProductDetailsComponent implements OnInit, OnDestroy {
   product: Product;
-
+  sub: any;
   constructor(private _activatedRoute: ActivatedRoute,
     private _productService: ProductService,
     private _location: Location ) { }
 
   ngOnInit() {
-    this._activatedRoute.params.subscribe(params => {
+    this.sub = this._activatedRoute.params.subscribe(params => {
       let id = params['id'];
       this._productService.getProduct(id)
       .then(data => {this.product = data});
@@ -27,5 +27,9 @@ export class ProductDetailsComponent implements OnInit {
 
    goBack(): void {
      this._location.back();
+   }
+
+   ngOnDestroy() {
+     this.sub.unsubscribe();
    }
 }
